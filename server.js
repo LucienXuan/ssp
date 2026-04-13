@@ -2,14 +2,18 @@ const express = require('express');
 const app = express();
 const PORT = 3000;
 
-app.get('/', (request, response) => {
-    response.send('<h1>Hello There!</h1> <br>Welcome to the real world!');
+app.get('/', (request, response)=>{
+    response.send('<h1>Welcome to MILA University!</h1><p>This is something.</p>');
 });
 
-app.listen(PORT, () => {
-    console.log (`Server is sucessfully running on port ${PORT}`);
+app.get('/about', (request, response)=>{
+    response.send('<h1>MILA University is a university in Malaysia.</h1><p>MILA University is located in Nilai, Negeri Sembilan.</p>');
 });
 
-//server should be stopped if any changes wish to make, but nodemon 
-//allows real time changes
-// click Ctrl+C to stop the server
+app.get('/contact', (request, response)=>{
+    response.send('<h1>Contact Page</h1><p>Please contact Mr. Adam for any inquiries at adam@milaedu.</p>');
+});
+
+app.listen(PORT, ()=> {
+    console.log(`Server is successfully running on port ${PORT}`);
+});
