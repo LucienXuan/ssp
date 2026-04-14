@@ -1,11 +1,180 @@
-<!DOCTYPE html> 
-<html> 
-<head> 
-<title>Success</title> 
-</head> 
-<body> 
-<h1>Registration Successful!</h1> 
-<p>Thank you, <strong><%= name %></strong>.</p> 
-<p>A confirmation email has been sent to <strong><%= email %></strong>.</p> 
-</body> 
-</html> 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Success</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(135deg, #000000 0%, #1a3a52 100%);
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+    }
+
+    .container {
+      background: white;
+      border-radius: 12px;
+      box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15);
+      max-width: 600px;
+      width: 100%;
+      padding: 40px;
+      text-align: center;
+    }
+
+    h1 {
+      color: #333;
+      margin-bottom: 30px;
+      font-size: 32px;
+      background: linear-gradient(135deg, #0066ff 0%, #00d4ff 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .success-icon {
+      width: 80px;
+      height: 80px;
+      margin: 0 auto 20px;
+      background: linear-gradient(135deg, #0066ff 0%, #00d4ff 100%);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-size: 40px;
+    }
+
+    p {
+      color: #555;
+      font-size: 16px;
+      line-height: 1.8;
+      margin-bottom: 20px;
+    }
+
+    strong {
+      color: #0066ff;
+      font-weight: 600;
+    }
+
+    .details {
+      background: #f8f9fa;
+      border-left: 4px solid #0066ff;
+      padding: 20px;
+      border-radius: 8px;
+      margin: 30px 0;
+      text-align: left;
+    }
+
+    .detail-row {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 12px;
+      font-size: 15px;
+    }
+
+    .detail-row:last-child {
+      margin-bottom: 0;
+    }
+
+    .detail-label {
+      color: #666;
+      font-weight: 500;
+    }
+
+    .detail-value {
+      color: #0066ff;
+      font-weight: 600;
+      word-break: break-word;
+      text-align: right;
+      flex: 1;
+      margin-left: 20px;
+    }
+
+    .button-container {
+      margin-top: 30px;
+    }
+
+    a {
+      display: inline-block;
+      padding: 12px 30px;
+      background: linear-gradient(135deg, #0066ff 0%, #00d4ff 100%);
+      color: white;
+      text-decoration: none;
+      border-radius: 8px;
+      font-weight: 600;
+      transition: all 0.3s ease;
+      letter-spacing: 0.5px;
+    }
+
+    a:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 20px rgba(0, 102, 255, 0.3);
+    }
+
+    @media (max-width: 600px) {
+      .container {
+        padding: 30px 20px;
+      }
+
+      h1 {
+        font-size: 26px;
+      }
+
+      .detail-row {
+        flex-direction: column;
+      }
+
+      .detail-value {
+        text-align: left;
+        margin-left: 0;
+        margin-top: 6px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="success-icon">✓</div>
+    <h1>Registration Successful!</h1>
+    
+    <p>Thank you for registering for our event!</p>
+    
+    <div class="details">
+      <div class="detail-row">
+        <span class="detail-label">Name:</span>
+        <span class="detail-value"><%= name %></span>
+      </div>
+      <div class="detail-row">
+        <span class="detail-label">Student ID:</span>
+        <span class="detail-value"><%= studentID %></span>
+      </div>
+      <div class="detail-row">
+        <span class="detail-label">Program:</span>
+        <span class="detail-value"><%= program %></span>
+      </div>
+      <div class="detail-row">
+        <span class="detail-label">Email:</span>
+        <span class="detail-value"><%= email %></span>
+      </div>
+    </div>
+
+    <p>A confirmation email has been sent to <strong><%= email %></strong>.</p>
+
+    <p>We look forward to seeing you at the event!</p>
+
+    <div class="button-container">
+      <a href="/">Register Another Student</a>
+    </div>
+  </div>
+</body>
+</html>
