@@ -1,178 +1,49 @@
-<!DOCTYPE html> 
-<html lang="en"> 
-<head> 
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Student Registration</title>
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
-    body {
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background: linear-gradient(135deg, #000000 0%, #1a3a52 100%);
-      min-height: 100vh;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      padding: 20px;
-    }
-
-    .container {
-      background: white;
-      border-radius: 12px;
-      box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15);
-      max-width: 500px;
-      width: 100%;
-      padding: 40px;
-    }
-
-    h1 {
-      color: #333;
-      margin-bottom: 30px;
-      font-size: 28px;
-      text-align: center;
-      background: linear-gradient(135deg, #0066ff 0%, #00d4ff 100%);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-clip: text;
-    }
-
-    .form-group {
-      margin-bottom: 24px;
-    }
-
-    label {
-      display: block;
-      margin-bottom: 8px;
-      color: #333;
-      font-weight: 600;
-      font-size: 14px;
-      letter-spacing: 0.5px;
-    }
-
-    input[type="text"],
-    input[type="number"],
-    input[type="email"],
-    select {
-      width: 100%;
-      padding: 12px 14px;
-      border: 2px solid #e0e0e0;
-      border-radius: 8px;
-      font-size: 15px;
-      font-family: inherit;
-      transition: all 0.3s ease;
-      background-color: #f8f9fa;
-    }
-
-    input[type="text"]:focus,
-    input[type="number"]:focus,
-    input[type="email"]:focus,
-    select:focus {
-      outline: none;
-      border-color: #0066ff;
-      background-color: white;
-      box-shadow: 0 0 0 4px rgba(0, 102, 255, 0.1);
-    }
-
-    input[type="text"]::placeholder,
-    input[type="email"]::placeholder {
-      color: #999;
-    }
-
-    select {
-      cursor: pointer;
-      appearance: none;
-      background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%230066ff' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e");
-      background-repeat: no-repeat;
-      background-position: right 12px center;
-      background-size: 20px;
-      padding-right: 40px;
-    }
-
-    button {
-      width: 100%;
-      padding: 14px;
-      background: linear-gradient(135deg, #0066ff 0%, #00d4ff 100%);
-      color: white;
-      border: none;
-      border-radius: 8px;
-      font-size: 16px;
-      font-weight: 600;
-      cursor: pointer;
-      transition: all 0.3s ease;
-      letter-spacing: 0.5px;
-      margin-top: 10px;
-    }
-
-    button:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 8px 20px rgba(0, 102, 255, 0.3);
-    }
-
-    button:active {
-      transform: translateY(0);
-    }
-
-    input[type="text"]:invalid:not(:placeholder-shown),
-    input[type="number"]:invalid:not(:placeholder-shown),
-    input[type="email"]:invalid:not(:placeholder-shown) {
-      border-color: #ff6b6b;
-    }
-
-    @media (max-width: 600px) {
-      .container {
-        padding: 30px 20px;
-      }
-
-      h1 {
-        font-size: 24px;
-        margin-bottom: 24px;
-      }
-
-      input[type="text"],
-      input[type="number"],
-      input[type="email"],
-      select {
-        font-size: 16px;
-      }
-    }
-  </style>
-</head> 
-<body> 
-  <div class="container">
-    <h1>Register for Event</h1> 
-    <form action="/submit" method="POST"> 
-      <div class="form-group">
-        <label for="studentName">Name:</label> 
-        <input type="text" id="studentName" name="studentName" required> 
-      </div>
-
-      <div class="form-group">
-        <label for="studentID">Student ID:</label>
-        <input type="number" id="studentID" name="studentID" required>
-      </div>
-
-      <div class="form-group">
-        <label for="program">Program:</label>
-        <select id="program" name="program" required>
-          <option value="">Select a program...</option>
-          <option value="Bachelor of Computer Engineering">Bachelor of Computer Engineering</option>
-          <option value="Bachelor of Computer Science">Bachelor of Computer Science</option>
-          <option value="Bachelor of Electrical and Electronic Engineering">Bachelor of Electrical and Electronic Engineering</option>
-        </select>
-      </div>
-
-      <div class="form-group">
-        <label for="studentEmail">Email:</label> 
-        <input type="email" id="studentEmail" name="studentEmail" required> 
-      </div>
-
-      <button type="submit">Submit</button> 
-    </form> 
-  </div>
-</body> 
-</html> 
+<!DOCTYPE html>
+<html>
+<head>
+<title>Student Registration</title>
+</head>
+<body>
+<h1>Register for Classes</h1>
+<form action="/submit" method="POST">
+<label>Name:</label>
+<input type="text" name="studentName" required>
+<br><br>
+<label>Email:</label>
+<input type="email" name="studentEmail" required>
+<br><br>
+<label>Program:</label>
+<select name="studentProgram" required>
+<option value="">Select a program</option>
+<option value="Computer Science">Bachelor of Computer Science</option>
+<option value="Computer Engineering">Bachelor of Computer Engineering</option>
+<option value="Software Engineering">Bachelor of Software Engineering</option>
+</select>
+<br><br>
+<label>Phone Number:</label>
+<input type="tel" name="studentPhone" placeholder="Phone Number" required>
+<br><br>
+<button type="submit">Submit</button>
+</form>
+<hr>
+<h2>Registered Students</h2>
+<table border="1">
+<tr>
+<th>ID</th>
+<th>Name</th>
+<th>Email</th>
+<th>Program</th>
+<th>Phone Number</th>
+</tr>
+<% students.forEach(student => { %>
+<tr>
+<td><%= student.id %></td>
+<td><%= student.name %></td>
+<td><%= student.email %></td>
+<td><%= student.program %></td>
+<td><%= student.phone %></td>
+</tr>
+<% }) %>
+</table>
+</body>
+</html>
