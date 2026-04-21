@@ -42,6 +42,11 @@
 <td><%= student.email %></td> 
 <td><%= student.program %></td> 
 <td><%= student.phone %></td> 
+<td><a href="/edit/<%=student.id %>">Edit</a>
+    <form action="/delete/<%= student.id %>" method="POST" style="display:inline;">
+        <button type="submit" onclick="return confirm('Are you sure to delete this student?');">Delete</button>
+    </form>
+</td>
 </tr> 
 <% }) %> 
 </table> 

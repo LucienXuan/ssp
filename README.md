@@ -43,7 +43,13 @@ In this lab, a database for a web application using SQLite was set and configure
 <b>Output (database.js): </b><br>
 <img src="images/Lab3-3.png" alt="index.ejs" width="600"> 
 
+<hr>
 
+<h1>Lab 4: DATABASE SETUP AND UPDATE/DELETE </h1>
+In this lab, the focus was on implementing CRUD (Create, Read, Update, Delete) operations in a web application using Express.js and SQLite. The database was set up to store student records, and a form was created to allow users to submit new student data, which was then saved in the database. The application was extended with functionalities to update and delete records. Using dynamic routing, the system allowed students to be edited or removed based on their unique ID. The application was tested to ensure that data was correctly added, displayed, and modified in the database. This lab enhanced the understanding of server-side programming and working with databases for interactive web applications.<br><br>
+
+<b>Output: </b><br>
+<img src="images/Lab4-1.png" alt="index.ejs1" width="600"> 
 
 
 
