@@ -32,9 +32,16 @@ In this lab, the View and Controller components of the MVC architecture were imp
 <hr>
 
 <h1>Lab 3: DATABASE SETUP AND READ/WRITE </h1>
-In this lab, a database for a web application using SQLite was set and configured, and integrated it with an Express server. Establishing a connection to the SQLite database and crating a table to store student information, such as name and email was learned. A form was created in EJS to collect data from the user, which was the processed and inserted into the database using POST routes in the server. The data was dynamically rendered on the web page, providing a lsit of registered students. This lab emphasised practical skills in handling CRUD operations with a database and displaying dynamic data on the front end using EJS. <br><br>
+In this lab, a database for a web application using SQLite was set and configured, and integrated it with an Express server. Establishing a connection to the SQLite database and crating a table to store student information, such as name and email was learned. A form was created in EJS to collect data from the user, which was the processed and inserted into the database using POST routes in the server. The data was dynamically rendered on the web page, providing a list of registered students. This lab emphasised practical skills in handling CRUD operations with a database and displaying dynamic data on the front end using EJS. <br><br>
 
-<b>Output <index.ejs)>: </b><br>
+<b>Output (index.ejs, empty form): </b><br>
+<img src="images/Lab3-1.png" alt="index.ejs1" width="600"> 
+
+<b>Output (index.ejs, information filled): </b><br>
+<img src="images/Lab3-2.png" alt="index.ejs" width="600"> 
+
+<b>Output (database.js): </b><br>
+<img src="images/Lab3-3.png" alt="index.ejs" width="600"> 
 
 
 

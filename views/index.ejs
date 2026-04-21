@@ -1,49 +1,49 @@
-<!DOCTYPE html>
-<html>
-<head>
-<title>Student Registration</title>
-</head>
-<body>
-<h1>Register for Classes</h1>
-<form action="/submit" method="POST">
-<label>Name:</label>
-<input type="text" name="studentName" required>
-<br><br>
-<label>Email:</label>
-<input type="email" name="studentEmail" required>
-<br><br>
-<label>Program:</label>
-<select name="studentProgram" required>
-<option value="">Select a program</option>
-<option value="Computer Science">Bachelor of Computer Science</option>
-<option value="Computer Engineering">Bachelor of Computer Engineering</option>
-<option value="Software Engineering">Bachelor of Software Engineering</option>
-</select>
-<br><br>
-<label>Phone Number:</label>
-<input type="tel" name="studentPhone" placeholder="Phone Number" required>
-<br><br>
-<button type="submit">Submit</button>
-</form>
-<hr>
-<h2>Registered Students</h2>
-<table border="1">
-<tr>
-<th>ID</th>
-<th>Name</th>
-<th>Email</th>
-<th>Program</th>
-<th>Phone Number</th>
-</tr>
-<% students.forEach(student => { %>
-<tr>
-<td><%= student.id %></td>
-<td><%= student.name %></td>
-<td><%= student.email %></td>
-<td><%= student.program %></td>
-<td><%= student.phone %></td>
-</tr>
-<% }) %>
-</table>
-</body>
+<!DOCTYPE html> 
+<html> 
+<head> 
+<title>Student Registration</title> 
+</head> 
+<body> 
+<h1>Register for Classes</h1> 
+<form action="/submit" method="POST"> 
+<label>Name:</label> 
+<input type="text" name="studentName" required> 
+<br><br> 
+<label>Email:</label> 
+<input type="email" name="studentEmail" required> 
+<br><br> 
+<label>Program:</label> 
+<select name="studentProgram" required> 
+<option value="">Select a program</option> 
+<option value="BCS">Bachelor of Computer Science</option> 
+<option value="BCE">Bachelor of Computer Engineering</option> 
+<option value="BSE">Bachelor of Software Engineering</option> 
+</select> 
+<br><br> 
+<label>Phone Number:</label> 
+<input type="tel" name="studentPhone" required> 
+<br><br> 
+<button type="submit">Submit</button> 
+</form> 
+<hr> 
+<h2>Registered Students</h2> 
+<table border="1"> 
+<tr> 
+<th>ID</th> 
+<th>Name</th> 
+<th>Email</th> 
+<th>Program</th> 
+<th>Phone Number</th> 
+</tr> 
+<% students.forEach(student => { %> 
+<tr> 
+<td><%= student.id %></td> 
+<td><%= student.name %></td> 
+<td><%= student.email %></td> 
+<td><%= student.program %></td> 
+<td><%= student.phone %></td> 
+</tr> 
+<% }) %> 
+</table> 
+</body> 
 </html>
