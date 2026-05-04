@@ -1,54 +1,23 @@
-<!DOCTYPE html> 
-<html> 
-<head> 
-<title>Student Registration</title> 
-</head> 
-<body> 
-<h1>Register for Classes</h1> 
-<form action="/submit" method="POST"> 
-<label>Name:</label> 
-<input type="text" name="studentName" required> 
-<br><br> 
-<label>Email:</label> 
-<input type="email" name="studentEmail" required> 
-<br><br> 
-<label>Program:</label> 
-<select name="studentProgram" required> 
-<option value="">Select a program</option> 
-<option value="BCS">Bachelor of Computer Science</option> 
-<option value="BCE">Bachelor of Computer Engineering</option> 
-<option value="BSE">Bachelor of Software Engineering</option> 
-</select> 
-<br><br> 
-<label>Phone Number:</label> 
-<input type="tel" name="studentPhone" required> 
-<br><br> 
-<button type="submit">Submit</button> 
-</form> 
-<hr> 
-<h2>Registered Students</h2> 
-<table border="1"> 
-<tr> 
-<th>ID</th> 
-<th>Name</th> 
-<th>Email</th> 
-<th>Program</th> 
-<th>Phone Number</th> 
-</tr> 
-<% students.forEach(student => { %> 
-<tr> 
-<td><%= student.id %></td> 
-<td><%= student.name %></td> 
-<td><%= student.email %></td> 
-<td><%= student.program %></td> 
-<td><%= student.phone %></td> 
-<td><a href="/edit/<%=student.id %>">Edit</a>
-    <form action="/delete/<%= student.id %>" method="POST" style="display:inline;">
-        <button type="submit" onclick="return confirm('Are you sure to delete this student?');">Delete</button>
-    </form>
-</td>
-</tr> 
-<% }) %> 
-</table> 
-</body> 
+<!DOCTYPE html>
+<html>
+<head>
+<title>MILA Staff Portal</title>
+</head>
+<body>
+<h1>MILA Staff Portal</h1>
+<% if (locals.error) { %>
+<script>
+alert("<%= error %>");
+</script>
+<% } %>
+<form action="/login" method="POST">
+<label>Username:</label><br>
+<input type="text" name="username" required><br><br>
+<label>Password:</label><br>
+<input type="password" name="password" required><br><br>
+<button type="submit">Login</button>
+</form>
+<br>
+<p><i>Hint: Try logging in with 'admin', 'editor', or 'viewer'. Password is 'pass123' for all.</i></p>
+</body>
 </html>

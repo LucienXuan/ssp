@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>MILA Student Directory</title>
+</head>
+<body>
+<h1>MILA Student Directory</h1>
+<p>Welcome, <strong><%= username %></strong>!</p>
+<a href="/logout" style="color:red; font-weight:bold;">[ Logout ]</a>
+<hr>
+<% if (role === 'admin') { %>
+<h2>Register for Classes</h2>
+<form action="/submit" method="POST">
+<label>Name:</label>
+<input type="text" name="studentName" required> <br><br>
+<label>Email:</label>
+<input type="email" name="studentEmail" required> <br><br>
+<label>Program:</label>
+<select name="studentProgram" required>
+<option value="">Select a program</option>
+<option value="BCS">Bachelor of Computer Science</option>
+<option value="BCE">Bachelor of Computer Engineering</option>
+<option value="BSE">Bachelor of Software Engineering</option>
+</select>
+<br><br>
+<label>Phone Number:</label>
+<input type="tel" name="studentPhone" required> <br><br>
+<button type="submit">Submit</button>
+</form>
+<hr>
+<% } %>
+<h2>Registered Students</h2>
+<table border="1">
+<tr>
+<th>ID</th>
+<th>Name</th>
+<th>Email</th>
+<th>Program</th>
+<th>Phone Number</th>
+<% if (role === 'admin' || role === 'editor') { %>
+<th>Actions</th>
+<% } %>
+</tr>
+<% students.forEach(student => { %>
+<tr>
+<td><%= student.id %></td>
+<td><%= student.name %></td>
+<td><%= student.email %></td>
+<td><%= student.program %></td>
+<td><%= student.phone %></td>
+<% if (role === 'admin' || role === 'editor') { %>
+<td>
+<a href="/edit/<%= student.id %>">Edit</a>
+<% if (role === 'admin') { %>
+|
+<form action="/delete/<%= student.id %>" method="POST" style="display:inline;">
+<button type="submit" onclick="return confirm('Are you sure?');">Delete</button>
+</form>
+<% } %>
+</td>
+<% } %>
+</tr>
+<% }) %>
+</table>
+</body>
+</html>

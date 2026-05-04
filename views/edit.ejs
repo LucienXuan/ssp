@@ -14,19 +14,19 @@ required>
 <input type="email" name="studentEmail" value="<%= student.email %>" 
 required> 
 <br><br> 
-<label>Program:</label> 
-<select name="studentProgram" value="<%= student.program %>" required> 
+<label>Program:</label>
+<select name="studentProgram" required> 
 <option value="">Select a program</option> 
-<option value="BCS">Bachelor of Computer Science</option> 
-<option value="BCE">Bachelor of Computer Engineering</option> 
-<option value="BSE">Bachelor of Software Engineering</option> 
-</select> 
+<option value="BCS" <% if (student.program === 'BCS') { %>selected<% } %>>Bachelor of Computer Science</option> 
+<option value="BCE" <% if (student.program === 'BCE') { %>selected<% } %>>Bachelor of Computer Engineering</option> 
+<option value="BSE" <% if (student.program === 'BSE') { %>selected<% } %>>Bachelor of Software Engineering</option> 
+</select>
 <br><br> 
 <label>Phone Number:</label> 
 <input type="tel" name="studentPhone" value="<%= student.phone %>" required> 
 <br><br> 
 <button type="submit">Update Record</button> 
-<a href="/">Cancel</a> 
+<a href="/dashboard">Cancel</a> 
 </form> 
 </body> 
 </html>
