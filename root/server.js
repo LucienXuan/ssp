@@ -13,7 +13,7 @@ app.use(session({
 }));
 
 app.set('view engine', 'ejs'); 
-app.set('views', '../views');
+app.set('views', './views');
 app.use(express.urlencoded({ extended: true })); 
 
 // RBAC Middleware - Role-Based Access Control
