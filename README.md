@@ -51,5 +51,27 @@ In this lab, the focus was on implementing CRUD (Create, Read, Update, Delete) o
 <b>Output: </b><br>
 <img src="images/Lab4-1.png" alt="index.ejs1" width="600"> 
 
+<hr>
+
+<h1>Lab 5: RBAC AND SESSIONS </h1>
+In this lab, the focus was on implementing Role-Based Access Control (RBAC), managing user sessions, and performing CRUD operations. Using express-session for session management and bcryptjs for password encryption, we updated the database to support RBAC by creating and seeding a users table. This lab reinforced the importance of securely handling user data and managing access while practicing CRUD functionalities in a server-side application.
+<br><br>
+
+<b>Output 1 (Login page): </b><br>
+<img src="images/Lab5-1.png" alt="login page" width="600"> 
+
+<b>Output 2 (Admin): </b><br>
+<img src="images/Lab5-2.png" alt="admin" width="600"> 
+
+<b>Output 3 (Editor): </b><br>
+<img src="images/Lab5-3.png" alt="editor" width="600"> 
+
+<b>Output 4 (Viewer): </b><br>
+<img src="images/Lab5-4.png" alt="viewer" width="600"> 
+
+<b>Output 5 (Additional Task): </b><br>
+<img src="images/Lab5-5.png" alt="additional task" width="600"> 
+
+
 
 

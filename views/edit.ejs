@@ -1,32 +1,108 @@
-<!DOCTYPE html> 
-<html> 
-<head> 
-<title>Edit Student</title> 
-</head> 
-<body> 
-<h1>Edit Student Record</h1> 
-<form action="/edit/<%= student.id %>" method="POST"> 
-<label>Name:</label> 
-<input type="text" name="studentName" value="<%= student.name %>" 
-required> 
-<br><br> 
-<label>Email:</label> 
-<input type="email" name="studentEmail" value="<%= student.email %>" 
-required> 
-<br><br> 
-<label>Program:</label>
-<select name="studentProgram" required> 
-<option value="">Select a program</option> 
-<option value="BCS" <% if (student.program === 'BCS') { %>selected<% } %>>Bachelor of Computer Science</option> 
-<option value="BCE" <% if (student.program === 'BCE') { %>selected<% } %>>Bachelor of Computer Engineering</option> 
-<option value="BSE" <% if (student.program === 'BSE') { %>selected<% } %>>Bachelor of Software Engineering</option> 
-</select>
-<br><br> 
-<label>Phone Number:</label> 
-<input type="tel" name="studentPhone" value="<%= student.phone %>" required> 
-<br><br> 
-<button type="submit">Update Record</button> 
-<a href="/dashboard">Cancel</a> 
-</form> 
-</body> 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Student</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: #f4f7fc;
+            margin: 0;
+            padding: 0;
+        }
+
+        .form-container {
+            max-width: 500px;
+            margin: 50px auto;
+            background: white;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            color: #333;
+            text-align: center;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        label {
+            font-weight: 500;
+            color: #555;
+        }
+
+        input[type="text"], input[type="email"], input[type="tel"], select {
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            font-size: 14px;
+        }
+
+        button {
+            background-color: #0066ff;
+            color: white;
+            padding: 12px;
+            border: none;
+            border-radius: 4px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #004bb5;
+        }
+
+        .cancel-button {
+            background-color: #f44336;
+            color: white;
+            padding: 12px;
+            border: none;
+            border-radius: 4px;
+            font-size: 16px;
+            cursor: pointer;
+            text-align: center;
+            display: block;
+            margin-top: 10px;
+            text-decoration: none;
+        }
+
+        .cancel-button:hover {
+            background-color: #d32f2f;
+        }
+    </style>
+</head>
+<body>
+    <div class="form-container">
+        <h1>Edit Student Record</h1>
+        <form action="/edit/<%= student.id %>" method="POST">
+            <label for="studentName">Name:</label>
+            <input type="text" id="studentName" name="studentName" value="<%= student.name %>" required>
+            
+            <label for="studentEmail">Email:</label>
+            <input type="email" id="studentEmail" name="studentEmail" value="<%= student.email %>" required>
+            
+            <label for="studentProgram">Program:</label>
+            <select id="studentProgram" name="studentProgram" required>
+                <option value="">Select a program</option>
+                <option value="BCS" <% if (student.program === 'BCS') { %>selected<% } %>>Bachelor of Computer Science</option>
+                <option value="BCE" <% if (student.program === 'BCE') { %>selected<% } %>>Bachelor of Computer Engineering</option>
+                <option value="BSE" <% if (student.program === 'BSE') { %>selected<% } %>>Bachelor of Software Engineering</option>
+            </select>
+
+            <label for="studentPhone">Phone Number:</label>
+            <input type="tel" id="studentPhone" name="studentPhone" value="<%= student.phone %>" required>
+
+            <button type="submit">Update Record</button>
+        </form>
+        <a href="/dashboard" class="cancel-button">Cancel</a>
+    </div>
+</body>
 </html>
